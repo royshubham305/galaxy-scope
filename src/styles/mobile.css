@@ -1,0 +1,30 @@
+/* Safe area insets for modern mobile browsers */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Prevent pull-to-refresh and improve touch handling */
+html, body {
+  overscroll-behavior-y: contain;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve touch targets */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Optimize for mobile landscape */
+  @media (orientation: landscape) {
+    .min-h-screen {
+      min-height: 100dvh;
+    }
+  }
+}
